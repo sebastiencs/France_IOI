@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int     main()
+{
+  int   tableau[10] = {0};
+  int   i;
+
+  for (i = 0; i < 11; i++)
+    printf("%d\n", tableau[i]);
+
+  return 0;
+}
+  

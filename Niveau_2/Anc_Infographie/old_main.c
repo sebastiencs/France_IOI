@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int nbLignes, nbColonnes, nbRectangles;
+  int Ligne, Colonne;
+  int LigneCSG[101], ColonneCSG[101], LigneCID[101], ColonneCID[101];//, Couleur[101];
+  char Couleur[101];
+  int tableau[101][101];
+  int i, z;
+  
+  scanf("%d %d", &nbLignes, &nbColonnes);
+  scanf("%d", &nbRectangles);
+  
+  for (i = 0; i < nbRectangles; i++)
+    scanf("%d %d %d %d %c", &LigneCSG[i], &ColonneCSG[i], &LigneCID[i], &ColonneCID[i], &Couleur[i]);
+
+  for (Ligne = 0; Ligne < nbLignes; Ligne++)
+    {
+      for (Colonne = 0; Colonne < nbColonnes; Colonne++)
+	tableau[Ligne][Colonne] = '.';
+    }
+  for (i = 0; i < nbRectangles; i++)
+    {
+      for (LigneCSG[i]; LigneCSG[i] <= LigneCID[i]; LigneCSG[i]++)
+	{
+	  z = ColonneCSG[i];
+	  for (z; z < ColonneCID[i]; z++)
+	    tableau[LigneCSG[i]][ColonneCSG[i]] = Couleur[i];
+	}
+    }
+
+  for (Ligne = 0; Ligne < nbLignes; Ligne++)
+    {
+      
+      for (Colonne = 0; Colonne < nbColonnes; Colonne++)
+	printf("%c", tableau[Ligne][Colonne]);
+      printf("\n");
+    }
+  
+  
+
+
+}

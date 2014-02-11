@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int             main()
+{
+  int           nbStock;
+  int           nbInserer;
+  int           polStock[5001];
+  int           polInserer[501];
+  int           i;
+  int           j;
+  int           k;
+
+  i = 0;
+
+  scanf("%d %d", &nbStock, &nbInserer);
+  while (i < nbStock)
+    {
+      scanf("%d", &polStock[i]);
+      i++;
+    }
+
+  i = 0;
+
+  while (i < nbInserer)
+    {
+      scanf("%d", &polInserer[i]);
+      i++;
+    }
+
+  i = 0;
+  j = 0;
+  
+  while (i < nbInserer)
+    {
+      while (polInserer[i] > polStock[j] && (j < nbStock + i) )
+        {
+          j++;
+        }
+      printf("%d ", j);
+
+      //addTableau(polStock, polInserer[i], j, nbStock + i);
+
+      for (k = nbStock + i; ((k > 0) && (polStock[k - 1] > polInserer[i] )); k--)
+        polStock[k] = polStock[k - 1];
+      polStock[k] = polInserer[i];
+      
+      j = 0;
+      i++;
+    }
+
+  i = 0;
+  printf("\n");
+  while (i < nbStock + nbInserer)
+    {
+      printf("%d ", polStock[i]);
+      i++;
+    }
+       
+  return 0;
+}

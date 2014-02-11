@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int     main()
+{
+  int   entier;
+  int   resultat;
+
+  resultat = 1;
+  
+  scanf("%d", &entier);
+
+  while ( resultat * 2 <= entier)
+    resultat *= 2;
+  
+
+
+
+
+  printf("%d", resultat);
+
+  return 0;
+}

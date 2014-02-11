@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int NbChar = 0, NbRotation, i;
+    int Charactere_avant[101];
+    int Charactere_apres[101];
+
+    scanf("%d", &NbChar);
+    scanf("%d", &NbRotation);
+
+    printf ("Rotation: %d\n", NbRotation); 
+    printf ("Valeur absolue: %d\n", abs(NbRotation));
+
+/*    for (i = 0; i <= NbChar; i++)
+        scanf ("%c", &Charactere_avant[i-1]);
+
+    if (NbRotation > NbChar)
+        NbRotation = NbRotation % NbChar;
+    
+    if (NbRotation >= 0)
+    {
+        for (i = 0; i < NbChar; i++)
+        {
+            if (i < NbRotation)
+                Charactere_apres[i] = Charactere_avant[i - NbRotation + NbChar];
+            else
+                Charactere_apres[i] = Charactere_avant[i - NbRotation];
+        }
+    }
+    else
+    {
+        for (i = 0; i < NbChar; i++)
+        {
+            if (i < (NbRotation + NbChar))
+                Charactere_apres[i] = Charactere_avant[i - NbRotation];
+            else
+                Charactere_apres[i] = Charactere_avant[i - NbRotation - NbChar];
+        }
+    }
+
+    for (i = 0; i < NbChar; i++)
+        printf ("%c", Charactere_apres[i]);
+*/  
+    return 0;
+}
+
+/*
+- Faire un printf pour chaque condition ( Si + ou - ) pour réglé le problème du dernier caractère
+- Effectuer le modulo dans la condition ( Si < avec une rotation - ) 
+*/
